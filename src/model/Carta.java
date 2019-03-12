@@ -12,7 +12,7 @@ public class Carta {
     }
 
     public Carta(boolean oculta, String nombre){
-
+        oculta = false;
     }
 
     public boolean isOculta() {

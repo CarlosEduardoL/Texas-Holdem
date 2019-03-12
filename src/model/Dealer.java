@@ -40,6 +40,11 @@ public class Dealer implements TCPManager.ConnectionEvent {
         }
 
         baraja = new Baraja();
+        manager.sendBroadcast("Carta Publica ::" + baraja.toString());
+        manager.sendBroadcast("Carta Publica ::" + baraja.toString());
+        manager.sendBroadcast("Carta Publica ::" + baraja.toString());
+
+        
 
 
     }
