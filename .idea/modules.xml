@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Texas-Holdem.iml" filepath="$PROJECT_DIR$/Texas-Holdem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Texas-Holdem-Server.iml" filepath="$PROJECT_DIR$/Texas-Holdem-Server.iml" />
     </modules>
   </component>
 </project>

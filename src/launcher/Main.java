@@ -1,9 +1,7 @@
 package launcher;
 
-import view.MainScreen;
+import model.Dealer;
 
 public class Main {
-    public static void main(String ...args){
-        new MainScreen().setVisible(true);
-    }
+    Dealer d = new Dealer();
 }
