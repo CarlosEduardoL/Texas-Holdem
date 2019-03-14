@@ -77,7 +77,7 @@ public class TCPManager {
 	}
 
 	public void sendDirectMessage(String remitente, String destinatario, String mensaje) {
-		getConnectionById(destinatario).sendMessage(mensaje + "Enviando por: "+remitente);
+		getConnectionById(destinatario).sendMessage(mensaje);
 	}
 
 }

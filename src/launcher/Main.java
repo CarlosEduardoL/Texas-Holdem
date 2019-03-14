@@ -3,5 +3,7 @@ package launcher;
 import model.Dealer;
 
 public class Main {
-    Dealer d = new Dealer();
+    public static void main(String ...args){
+        Dealer d = new Dealer();
+    }
 }

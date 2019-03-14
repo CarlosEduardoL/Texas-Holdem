@@ -12,7 +12,8 @@ public class Carta {
     }
 
     public Carta(boolean oculta, String nombre){
-        oculta = false;
+        this.oculta = oculta;
+        this.nombre = nombre;
     }
 
     public boolean isOculta() {
