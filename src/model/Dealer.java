@@ -16,6 +16,7 @@ public class Dealer implements TCPManager.ConnectionEvent {
     private List<String> participantesList;
     private String mensaje;
     private int turno;
+    private int cartasPublicas;
 
     public Dealer(){
         try {
@@ -68,6 +69,7 @@ public class Dealer implements TCPManager.ConnectionEvent {
         manager.sendBroadcast("Carta Publica::" + baraja.getCartaRandom().toString());
         manager.sendBroadcast("Carta Publica::" + baraja.getCartaRandom().toString());
         manager.sendBroadcast("Carta Publica::" + baraja.getCartaRandom().toString());
+        cartasPublicas = 3;
 
         for (int i = 0; i < participantesList.size(); i++) {
             manager.sendDirectMessage("Server",participantesList.get(i),"Carta Privada::"+baraja.getCartaRandom().toString());
@@ -77,6 +79,19 @@ public class Dealer implements TCPManager.ConnectionEvent {
                 e.printStackTrace();
             }
             manager.sendDirectMessage("Server",participantesList.get(i),"Carta Privada::"+baraja.getCartaRandom().toString());
+        }
+
+        orden();
+    }
+
+    private void orden() {
+        if (turno<participantesList.size()){
+            manager.sendDirectMessage("Server",participantesList.get(turno),"Permiso::Permiso");
+            turno++;
+        }else if (cartasPublicas <= 5){
+            manager.sendBroadcast("Carta Publica::" + baraja.getCartaRandom().toString());
+            turno = 0;
+            cartasPublicas++;
         }
     }
 
@@ -107,6 +122,11 @@ public class Dealer implements TCPManager.ConnectionEvent {
     public void onMessage(String uuid, String msj) {
         if (msj.equals("Sali")){
             manager.sendBroadcast("Salio::"+uuid);
+            int t = turno - 1;
+            orden();
+            participantesList.remove(t);
+        }else if (msj.equals("Sigo")){
+            orden();
         }
     }
 }
