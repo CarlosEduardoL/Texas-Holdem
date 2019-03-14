@@ -41,8 +41,8 @@ public class TCPManager {
 				Connection connection = new Connection(socket);
 				connection.defineListeners(listeners);
 				connection.init();
-				connections.put(connection.getUuid(), connection);
-				for(int i=0 ; i<listeners.size() ; i++) listeners.get(i).onConnection(connection.getUuid());
+				connections.put(socket.getInetAddress().getHostAddress(), connection);
+				for(int i=0 ; i<listeners.size() ; i++) listeners.get(i).onConnection(socket.getInetAddress().getHostAddress());
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

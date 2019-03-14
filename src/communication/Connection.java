@@ -90,7 +90,7 @@ public class Connection {
 						isAlive = false;
 					}
 					System.out.println(">>Receptor: " + line);
-					for(int i=0 ; i < listeners.size() && isAlive ; i++) listeners.get(i).onMessage(uuid, line);
+					for(int i=0 ; i < listeners.size() && isAlive ; i++) listeners.get(i).onMessage(socket.getInetAddress().getHostAddress(), line);
 				}
 			}catch(IOException ex) {
 
