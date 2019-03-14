@@ -92,6 +92,7 @@ public class Dealer implements TCPManager.ConnectionEvent {
             manager.sendBroadcast("Carta Publica::" + baraja.getCartaRandom().toString());
             turno = 0;
             cartasPublicas++;
+            orden();
         }
     }
 
