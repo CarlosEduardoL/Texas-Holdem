@@ -43,9 +43,9 @@ public class Dealer implements TCPManager.ConnectionEvent {
                 ).start();
             }
         }
-        manager.sendBroadcast("Carta Publica ::" + baraja.toString());
-        manager.sendBroadcast("Carta Publica ::" + baraja.toString());
-        manager.sendBroadcast("Carta Publica ::" + baraja.toString());
+        manager.sendBroadcast("Carta Publica::" + baraja.toString());
+        manager.sendBroadcast("Carta Publica::" + baraja.toString());
+        manager.sendBroadcast("Carta Publica::" + baraja.toString());
 
 
 
