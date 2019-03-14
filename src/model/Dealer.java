@@ -88,7 +88,7 @@ public class Dealer implements TCPManager.ConnectionEvent {
         if (turno<participantesList.size()){
             manager.sendDirectMessage("Server",participantesList.get(turno),"Permiso::Permiso");
             turno++;
-        }else if (cartasPublicas <= 5){
+        }else if (cartasPublicas < 5){
             manager.sendBroadcast("Carta Publica::" + baraja.getCartaRandom().toString());
             turno = 0;
             cartasPublicas++;
@@ -127,6 +127,7 @@ public class Dealer implements TCPManager.ConnectionEvent {
             orden();
             participantesList.remove(t);
         }else if (msj.equals("Sigo")){
+            manager.sendBroadcast("Siguio::"+uuid);
             orden();
         }
     }
